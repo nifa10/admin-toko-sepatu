@@ -1,0 +1,210 @@
+<!--
+
+=========================================================
+* Volt - Bootstrap 5 Admin Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2020 Themesberg (https://www.themesberg.com)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        @@include('./_head.html', { "path": "../../..", "title": "Volt Bootstrap 5 Dashboard - Bootstrap Tables" })
+    </head>
+
+    <body>
+        @@include('./dashboard/_nav.html', { "path": "../../.." }) @@include('./dashboard/_sidenav.html', { "path":
+        "../../..", "page": "tables" })
+
+        <main class="content">
+            @@include('./dashboard/_topbar.html', { "path": "../../.." })
+
+            <div class="py-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+                        <li class="breadcrumb-item">
+                            <a href="#"><span class="fas fa-home"></span></a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Bootstrap tables</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="card border-light shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive py-4">
+                        <!-- Button Modal Add -->
+                        <button
+                            class="btn btn-outline-success col-1 ml-3"
+                            type="button"
+                            data-toggle="modal"
+                            data-target="#modal-form"
+                        >
+                            Add
+                        </button>
+                        <table class="table table-flush" id="datatable">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th class="col-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>perempuan</td>
+                                    <td>
+                                        <button
+                                            class="btn btn-outline-secondary"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#modal-form"
+                                        >
+                                            Edit
+                                        </button>
+                                        <button
+                                            class="btn btn-outline-danger"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#modal-delete"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>laki-laki</td>
+                                    <td>
+                                        <button
+                                            class="btn btn-outline-secondary"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#modal-form"
+                                        >
+                                            Edit
+                                        </button>
+                                        <button
+                                            class="btn btn-outline-danger"
+                                            type="button"
+                                            data-toggle="modal"
+                                            data-target="#modal-delete"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Blog page navigation">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="first link" href="#"
+                                        ><span class="fas fa-angle-double-left"></span
+                                    ></a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" aria-label="first link" href="#"
+                                        ><span class="fas fa-angle-double-right"></span
+                                    ></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal form Content -->
+            <div
+                class="modal fade"
+                id="modal-form"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="modal-form"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body p-0">
+                            <div class="card border-light p-4">
+                                <button
+                                    type="button"
+                                    class="btn-close ml-auto"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                                <div class="card-header border-0 text-center pb-0">
+                                    <h2 class="h4">Add Category</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form action="#" class="mt-4">
+                                        <!-- Form -->
+                                        <div class="form-group mb-4">
+                                            <label for="name">name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon1"></span>
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="brand name"
+                                                    id="name"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <!-- End of Form -->
+                                        <button type="submit" class="btn btn-block btn-primary">Add</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Modal form Content -->
+            <!-- Modal Content -->
+            <div
+                class="modal fade"
+                id="modal-delete"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="modal-default"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="h6 modal-title">delete</h2>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Apakah anda yakin ingin menghapus ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">Yes</button>
+                            <button type="button" class="btn btn-link text-gray ml-auto" data-dismiss="modal">
+                                No
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Modal Content -->
+            @@include('./dashboard/_footer.html', { "path": "../../..", "classes": "bg-primary text-white" })
+        </main>
+
+        @@include('./_scripts.html', { "path": "../../.." })
+    </body>
+</html>
